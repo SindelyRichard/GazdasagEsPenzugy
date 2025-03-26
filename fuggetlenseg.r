@@ -38,8 +38,8 @@
             cols<-ncol(K)
             s = 0;
 
-              sor_sum <- sor(K)
-                oszlop_sum <- oszlop(K)
+            sor_sum <- sor(K)
+            oszlop_sum <- oszlop(K)
         
             for (i in 1:rows) {
                 for(j in 1:cols){
@@ -48,5 +48,15 @@
             }
             return(s)
         }
+
+        qp = function(x){
+            s <- numeric(length(x))
+            for (i in 1:length(x)) {
+                s[i] = x[i]/N
+            }
+            return(s)
+        }
+        print(qp(sor(K)))
+        print(qp(oszlop(K)))
 
         print(x(K))
